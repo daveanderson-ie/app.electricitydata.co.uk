@@ -1,3 +1,7 @@
-## Welcome to Electricity Data UK
+## Electricity Data UK
 
-The home for all your electricity data needs.
+Welcome to Electricity Data UK - the home for all your electricity data needs.
+
+Coming soon
+
+Contact: hello@electricitydata.co.uk
