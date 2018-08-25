@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>Carbon Intensity Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   $(document).ready(function(){
     $("button").click(function(){
       $.getJSON("https://hook.integromat.com/ap2w8qwhm762padprdy91lesgenzv4f7?postcode=" + $('input').val(), function( data, status ) {
-        $("#result").text("Result: " + data.forecast);
+        $("#result").text("Result: " + data.forecast + " gCO2/kWh");
       }).fail( function(jqxhr, textStatus, error ){
         $("#result").text("Result: Oopsie, can't find that postcode :(");
       });
