@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+      $.getJSON("https://hook.integromat.com/ap2w8qwhm762padprdy91lesgenzv4f7?postcode=" + $('input').val(), function( data, status ) {
+        $("#result").text("Result: " + data.forecast);
+      }).fail( function(jqxhr, textStatus, error ){
+        $("#result").text("Result: Oopsie, can't find that postcode :(");
+      });
+    });
+  });
+  </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron col-xl-12 text-center">
+                <H1>What's the Carbon Intensity in your area?</H1>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label form="postcode">UK Postcode:</label>
+                    <input type="text" value="E17" id="postcode"></input>
+                    <button>Go</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label id="result">Result: </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
